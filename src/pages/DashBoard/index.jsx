@@ -2,6 +2,8 @@ import logo from "../../assets/Logo.svg";
 import { StyledMain } from "./style.js";
 import { StyledHeader } from "./style.js";
 import { Link } from "react-router-dom";
+// localStorage.getItem()
+
 export function DashBoard() {
   return (
     <>

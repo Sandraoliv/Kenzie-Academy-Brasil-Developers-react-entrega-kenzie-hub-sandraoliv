@@ -8,6 +8,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { StyledMain } from "./style.js";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const schema = yup
   .object()
@@ -39,9 +41,10 @@ export function Login() {
     reset();
     try {
       setLoading(true);
-      const res = await api.post("/sessions", data);
+      const response = await api.post("/sessions", data);
 
-      setUser(res.data.user);
+      setUser(response.data.user);
+      console.log(response.data);
 
       localStorage.setItem("@TOKEN", response.data.token);
       localStorage.setItem("@USERID", response.data.user.id);
