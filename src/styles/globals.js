@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 }
     :root{
         
-    --color-primary:  #FF577F;
+    --color-primary:#FF577F;
     --color-secondary: #59323F;
     --color-white: #F8F9FA;
     --color-success: #7CC39C;
@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .App{
-        height: 100%;
+        height: 100vh;
     }
     header {
     height: 175px;
@@ -43,4 +43,5 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
   }
+
   `;
