@@ -27,13 +27,13 @@ export const StyledFom = styled.form`
     align-items: center;
     background-color: var(--grey-3);
     p {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       background-color: var(--grey-3);
       color: var(--grey-1);
     }
     button {
       height: 48px;
-      width: 100%;
+      width: 98%;
       font-size: 0.9rem;
       font-weight: 600;
       background-color: var(--grey-1);
