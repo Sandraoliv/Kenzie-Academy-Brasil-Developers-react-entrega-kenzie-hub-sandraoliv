@@ -15,6 +15,7 @@ export function DashBoard() {
 
   function logout() {
     localStorage.clear();
+    setUser({});
     navigate("/");
   }
 

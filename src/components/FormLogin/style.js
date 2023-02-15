@@ -5,8 +5,9 @@ export const StyledFom = styled.form`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  padding: 17px 4px;
   background-color: var(--grey-3);
 
   h1 {
@@ -31,6 +32,7 @@ export const StyledFom = styled.form`
       color: var(--grey-1);
     }
     button {
+      height: 48px;
       width: 95%;
       background-color: var(--grey-1);
     }
@@ -38,8 +40,8 @@ export const StyledFom = styled.form`
 
   button {
     background-color: var(--color-primary);
-    width: 95%;
-    height: 38.5px;
+    width: 96%;
+    height: 48px;
     border-radius: 8px;
     color: var(--grey-0);
   }

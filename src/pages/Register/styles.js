@@ -8,7 +8,7 @@ export const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 25px;
   margin: 0 auto;
   border-radius: 8px;
 
@@ -24,7 +24,8 @@ export const StyledMain = styled.main`
 
   h1 {
     color: var(--grey-0);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 700;
     background-color: var(--grey-3);
   }
   p {
