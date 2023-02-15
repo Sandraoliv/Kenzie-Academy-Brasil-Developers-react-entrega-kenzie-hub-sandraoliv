@@ -45,7 +45,6 @@ export function Formregister() {
           register={register("name")}
           error={errors.name}
         />
-
         <Input
           label="Email"
           type="email"
@@ -53,7 +52,6 @@ export function Formregister() {
           register={register("email")}
           error={errors.email}
         />
-
         <Input
           label="Senha"
           type="password"
@@ -83,24 +81,30 @@ export function Formregister() {
           register={register("contact")}
           error={errors.contact}
         />
-
-        <select placeholder="Selecionar  módulo" {...register("course_module")}>
-          <option value="Primeiro módulo (Introdução ao Frontend)">
-            Primeiro módulo
-          </option>
-          <option value="Segundo módulo (Frontend Avançado)">
-            Segundo módulo
-          </option>
-          <option value="Terceiro módulo (Introdução ao Backend)">
-            Terceiro módulo
-          </option>
-          <option value="Quarto módulo (Backend Avançado)">
-            Quarto módulo
-          </option>
-        </select>
-        <p>{errors.course_module?.message}</p>
-
-        <button type="submit">Cadastrar</button>
+        <div>
+          <label htmlFor="selecione">Selecionar módulo</label>
+          <select
+            id="selecione"
+            placeholder="Selecionar  módulo"
+            {...register("course_module")}
+          >
+            <option>Selecione um módulo</option>
+            <option value="Primeiro módulo (Introdução ao Frontend)">
+              Primeiro módulo
+            </option>
+            <option value="Segundo módulo (Frontend Avançado)">
+              Segundo módulo
+            </option>
+            <option value="Terceiro módulo (Introdução ao Backend)">
+              Terceiro módulo
+            </option>
+            <option value="Quarto módulo (Backend Avançado)">
+              Quarto módulo
+            </option>
+          </select>
+          <p>{errors.course_module?.message}</p>
+          <button type="submit">Cadastrar</button>
+        </div>
       </StyledFomRegister>
     </>
   );

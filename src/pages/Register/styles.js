@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   background-color: var(--grey-3);
   width: 90%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
   margin: 0 auto;
+  border-radius: 8px;
 
   @media (min-width: 768px) {
     width: 370px;

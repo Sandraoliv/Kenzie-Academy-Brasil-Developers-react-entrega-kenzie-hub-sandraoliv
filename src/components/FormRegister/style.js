@@ -12,7 +12,7 @@ export const StyledFomRegister = styled.form`
 
   div {
     width: 90%;
-    gap: 16px;
+    gap: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,16 +36,21 @@ export const StyledFomRegister = styled.form`
   }
   label {
     background-color: var(--grey-3);
-    color: var(--grey-1);
+    color: var(--grey-0);
   }
   select {
     background-color: var(--grey-2);
-    width: 90%;
+    width: 100%;
     padding: 0 11px;
     height: 38.38px;
     border: none;
     color: var(--grey-1);
     margin: 10px 0;
+    select > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   select > option {
@@ -53,7 +58,7 @@ export const StyledFomRegister = styled.form`
   }
   button {
     background-color: var(--color-secondary);
-    width: 90%;
+    width: 100%;
     color: var(--grey-0);
     height: 38.38px;
     border: none;
