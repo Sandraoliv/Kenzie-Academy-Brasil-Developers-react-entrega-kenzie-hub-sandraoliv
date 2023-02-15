@@ -19,9 +19,15 @@ export const StyledInput = styled.div`
       border: 1px solid var(--grey-0);
     }
   }
+  input::placeholder {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--grey-1);
+  }
   label {
     color: var(--grey-0);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 400;
     background-color: var(--grey-3);
   }
 `;

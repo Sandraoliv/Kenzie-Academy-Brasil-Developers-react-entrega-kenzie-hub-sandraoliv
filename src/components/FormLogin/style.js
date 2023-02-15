@@ -33,16 +33,20 @@ export const StyledFom = styled.form`
     }
     button {
       height: 48px;
-      width: 95%;
+      width: 100%;
+      font-size: 0.9rem;
+      font-weight: 600;
       background-color: var(--grey-1);
     }
   }
 
   button {
     background-color: var(--color-primary);
-    width: 96%;
+    width: 95%;
     height: 48px;
     border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--grey-0);
   }
 

@@ -37,7 +37,6 @@ export const StyledMain = styled.main`
     }
     .divfooter {
       width: 100%;
-      padding: 0 10px;
       gap: 30px;
 
       button {

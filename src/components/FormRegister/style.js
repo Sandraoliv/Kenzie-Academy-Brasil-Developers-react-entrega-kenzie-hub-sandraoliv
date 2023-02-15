@@ -35,6 +35,8 @@ export const StyledFomRegister = styled.form`
     height: 43px;
   }
   label {
+    font-size: 0.9rem;
+    font-weight: 600;
     background-color: var(--grey-3);
     color: var(--grey-0);
   }
@@ -44,6 +46,8 @@ export const StyledFomRegister = styled.form`
     padding: 0 11px;
     height: 38.38px;
     border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--grey-1);
     margin: 10px 0;
     select > div {
@@ -54,11 +58,15 @@ export const StyledFomRegister = styled.form`
   }
 
   select > option {
+    font-size: 0.9rem;
+    font-weight: 600;
     background-color: var(--grey-2);
   }
   button {
     background-color: var(--color-secondary);
     width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--grey-0);
     height: 38.38px;
     border: none;
