@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledInput = styled.div`
-  width: 90%;
+  width: 95%;
   justify-content: center;
   margin: 0 auto;
   gap: 13px;

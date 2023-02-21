@@ -1,12 +1,7 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-import { api } from "./services/api";
 import * as React from "react";
-import { Link, Routes, Route } from "react-router-dom";
 import { GlobalStyle } from "./styles/globals.js";
 import { AppRoutes } from "./Routes/AppRoutes";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {

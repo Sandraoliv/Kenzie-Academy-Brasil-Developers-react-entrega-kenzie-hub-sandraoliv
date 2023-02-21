@@ -9,6 +9,7 @@ export const StyledMain = styled.main`
   align-items: center;
   justify-content: center;
   gap: 25px;
+  padding: 10px 0;
   margin: 0 auto;
   border-radius: 8px;
 
@@ -52,5 +53,6 @@ export const StyledHeader = styled.header`
     width: 79.54px;
     height: 31.95px;
     border: none;
+    cursor: pointer;
   }
 `;

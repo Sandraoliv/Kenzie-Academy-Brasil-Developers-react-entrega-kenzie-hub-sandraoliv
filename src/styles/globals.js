@@ -11,8 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter' ;
     background: #000000;
     font-family: 'Inter';
-    cursor: pointer;
-    
+    background-color: var(--grey-2);
 }
     :root{
         
@@ -42,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid var(--grey-2);
   }
 
   `;

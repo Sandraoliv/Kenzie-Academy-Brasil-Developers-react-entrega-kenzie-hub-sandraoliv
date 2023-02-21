@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const StyledFom = styled.form`
   gap: 22px;
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,6 +15,9 @@ export const StyledFom = styled.form`
     font-size: 0.87rem;
     width: max-content;
     background-color: var(--grey-3);
+  }
+  input {
+    height: 48.5px;
   }
 
   .divfooter {
@@ -53,5 +56,8 @@ export const StyledFom = styled.form`
   p {
     color: var(--grey-0);
     background-color: var(--grey-3);
+  }
+  label {
+    width: max-content;
   }
 `;

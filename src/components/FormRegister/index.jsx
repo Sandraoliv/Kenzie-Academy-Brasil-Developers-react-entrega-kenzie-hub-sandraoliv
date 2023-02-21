@@ -1,40 +1,22 @@
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { api } from "../../services/api";
-import { toast } from "react-toastify";
 import { registerSchema } from "./registerSchema";
 import { StyledFomRegister } from "./style.js";
+import { UserContext } from "../../providers/UserContext";
+import { useContext } from "react";
 
 export function Formregister() {
-  function redirect() {
-    navigate("/");
-  }
+  const { registerUser } = useContext(UserContext);
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(registerSchema),
   });
-  const navigate = useNavigate();
 
-  async function registerUser(data) {
-    delete data.passwordConfirm;
-    reset();
-
-    try {
-      await api.post("/users", data);
-      toast.success("Cadastro realizado com sucesso!");
-      redirect();
-    } catch (error) {
-      toast.error("Não foi possível efetuar o cadastro!");
-      console.error(error);
-    }
-  }
   return (
     <>
       <StyledFomRegister className="form" onSubmit={handleSubmit(registerUser)}>
