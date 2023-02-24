@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledFom = styled.form`
   gap: 22px;
   width: 100%;

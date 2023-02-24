@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledFomRegister = styled.form`
   width: 100%;
   justify-content: space-between;

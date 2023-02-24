@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledInput = styled.div`
   width: 95%;
   justify-content: center;

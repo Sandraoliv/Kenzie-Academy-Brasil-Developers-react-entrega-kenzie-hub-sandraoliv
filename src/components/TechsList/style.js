@@ -31,6 +31,7 @@ export const StyledContainer = styled.ul`
     padding: 2px 14px;
     align-items: center;
     border-radius: 8px;
+    cursor: pointer;
     justify-content: space-between;
     :hover {
       background-color: var(--grey-2);
@@ -44,10 +45,12 @@ export const StyledContainer = styled.ul`
 
   @media (min-width: 769px) {
     width: 99%;
+    overflow-y: hidden;
   }
 
   li {
     height: 49px;
     width: 90%;
+    min-height: 49px;
   }
 `;

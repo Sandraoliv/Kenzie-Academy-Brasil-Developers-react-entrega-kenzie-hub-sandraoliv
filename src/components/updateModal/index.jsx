@@ -5,39 +5,53 @@ import { Input } from "../Input";
 import { useContext } from "react";
 import { TechContext } from "../../providers/TechContext";
 import { StyledUpdateModal } from "./style";
+import { Schema } from "yup";
 
 export function UpdateModal() {
-  const { updateHandleModal, removeTech } = useContext(TechContext);
+  const {
+    updateHandleModal,
+    selectedTech,
+    removeTech,
+    updateTech,
+    setOpenUpdateModal,
+  } = useContext(TechContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(updateModalSchema),
-  });
+  } = useForm({ resolver: yupResolver(updateModalSchema) });
+
+  function closeModal() {
+    setOpenUpdateModal(false);
+  }
+
+  function updateSubmit(data) {
+    updateTech(data, selectedTech.id);
+    closeModal();
+  }
   return (
     <>
       <StyledUpdateModal>
         <div className="modal">
           <header className="modalHeader">
             <h1>Tecnologia Detalhes</h1>
-            <button className="closeModal" onClick={updateHandleModal}>
+            <button className="closeModal" onClick={() => closeModal()}>
               x
             </button>
           </header>
-          <form onSubmit={handleSubmit(removeTech)}>
+          <form onSubmit={handleSubmit(updateSubmit)}>
             <div>
               <Input
-                Label="Nome do projeto"
-                id="nome do projeto"
+                disabled
+                label="Nome do projeto"
+                id="title"
                 type="text"
-                register={register("title")}
-                error={errors.title}
+                placeholder={selectedTech.title}
               />
             </div>
             <div>
               <label htmlFor="status">Status</label>
-              <select id="status">
+              <select id="status" {...register("status")}>
                 <option value="iniciante">Iniciante</option>
                 <option value="intermediario">Intermediário</option>
                 <option value="avancado">Avançado</option>
@@ -48,7 +62,11 @@ export function UpdateModal() {
               <button type="submit" className="updateButton ">
                 Salvar alterações
               </button>
-              <button type="submit" className="removeButton">
+              <button
+                onClick={() => removeTech(selectedTech.id)}
+                className="removeButton"
+                type="button"
+              >
                 Excluir
               </button>
             </div>

@@ -30,22 +30,24 @@ export function DashBoard() {
         <img src={logo} alt="logo" />
         <button onClick={() => logout()}>Sair</button>
       </StyledHeader>
-      <StyledMain>
-        <div>
-          <h1>Olá , {user.name} </h1>
-          <p>{user.course_module}</p>
-        </div>
-        <StyledSection>
-          <div className="divSection">
-            <h1>Tecnologias</h1>
-            <button onClick={handleModal}>
-              <img src={plus} alt="adicionar" />
-            </button>
+      {user ? (
+        <StyledMain>
+          <div>
+            <h1>Olá , {user.name} </h1>
+            <p>{user.course_module}</p>
           </div>
+          <StyledSection>
+            <div className="divSection">
+              <h1>Tecnologias</h1>
+              <button onClick={() => handleModal()}>
+                <img src={plus} alt="adicionar" />
+              </button>
+            </div>
 
-          <TechsList />
-        </StyledSection>
-      </StyledMain>
+            <TechsList />
+          </StyledSection>
+        </StyledMain>
+      ) : null}
     </>
   );
 }

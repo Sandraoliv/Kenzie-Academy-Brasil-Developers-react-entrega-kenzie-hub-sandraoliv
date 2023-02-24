@@ -30,6 +30,7 @@ export function Modal() {
             <div>
               <Input
                 label="Nome"
+                id="title"
                 type="text"
                 register={register("title")}
                 error={errors.title}

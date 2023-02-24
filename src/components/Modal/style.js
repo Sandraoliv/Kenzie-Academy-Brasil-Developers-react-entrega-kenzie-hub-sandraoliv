@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledModal = styled.div`
   width: 100vw;
   height: 100vh;
@@ -14,7 +15,7 @@ export const StyledModal = styled.div`
 
   .modal {
     width: 295px;
-    height: 273.41px;
+    height: 278px;
     border-radius: 4px;
     background-color: var(--grey-3);
   }
@@ -26,7 +27,7 @@ export const StyledModal = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 13px;
     background-color: var(--grey-2);
   }
 
@@ -35,11 +36,12 @@ export const StyledModal = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: inherit;
-    background: rgba(18, 18, 20, 0.5);
+    padding: 7px 14px 14px;
+    background-color: var(--grey-3);
   }
 
   div {
-    background: rgba(18, 18, 20, 0.5);
+    background-color: var(--grey-3);
     height: auto;
     display: flex;
     gap: 8px;
@@ -65,6 +67,7 @@ export const StyledModal = styled.div`
     height: 32px;
     border: none;
     display: flex;
+    align-items: center;
     justify-content: center;
     cursor: pointer;
     background-color: transparent;
@@ -82,6 +85,7 @@ export const StyledModal = styled.div`
     color: var(--grey-0);
     font-size: 0.56rem;
     margin-left: 12px;
+    background-color: transparent;
   }
 
   select {
@@ -92,6 +96,7 @@ export const StyledModal = styled.div`
     color: var(--grey-1);
     background-color: var(--grey-2);
     border-radius: 4px;
+    padding: 0 8px;
   }
   .buttonSubmit {
     background-color: var(--color-primary);
@@ -110,16 +115,20 @@ export const StyledModal = styled.div`
     form {
       background: rgba(18, 18, 20, 0.5);
       height: inherit;
+      padding: 7px 14px;
+      background-color: var(--grey-3);
       justify-content: space-evenly;
     }
     .modal {
       width: 369px;
       height: 342px;
+      background-color: var(--grey-3);
     }
     .updateButton {
       width: 178.09px;
       height: 48.37px;
     }
+
     .removeButton {
       width: 99.35px;
       height: 48.37px;

@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
+import { TechContext } from "./TechContext";
 
 export const UserContext = createContext({});
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [techs, setTechs] = useState([]);
 
   const token = localStorage.getItem("@TOKEN");
   const userId = localStorage.getItem("@USERID");
@@ -39,11 +39,9 @@ export function UserProvider({ children }) {
       const response = await api.post("/sessions", data);
 
       setUser(response.data.user);
-      setTechs(response.data.user.techs);
 
       localStorage.setItem("@TOKEN", response.data.token);
       localStorage.setItem("@USERID", response.data.user.id);
-      localStorage.setItem("@TECHS", JSON.stringify(response.data.user.techs));
 
       toast.success(" Login realizado com sucesso!");
       navigate("/dashboard");
@@ -55,21 +53,21 @@ export function UserProvider({ children }) {
     }
   }
 
+  async function getUserProfile() {
+    try {
+      setLoading(true);
+
+      const response = await api.get(`/users/${userId}`);
+      setUser(response.data);
+    } catch (error) {
+      toast.error("Não foi possível carregar as informações!");
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
   useEffect(() => {
     if (userId) {
-      async function getUserProfile() {
-        try {
-          setLoading(true);
-          const response = await api.get(`/users/${userId}`);
-          setUser(response.data);
-          setTechs(response.data);
-        } catch (error) {
-          toast.error("Não foi possível carregar as informações!");
-          console.log(error);
-        } finally {
-          setLoading(false);
-        }
-      }
       getUserProfile();
     }
   }, []);
@@ -88,7 +86,7 @@ export function UserProvider({ children }) {
         } catch (error) {
           toast.error("Não foi possível carregar as informações!");
           localStorage.removeItem(" @TOKEN ");
-          console.log(error);
+          console.error(error);
         }
       }
       userAutoLogin();
@@ -101,6 +99,7 @@ export function UserProvider({ children }) {
         user,
         setLoading,
         setUser,
+        getUserProfile,
         loginUser,
         registerUser,
       }}

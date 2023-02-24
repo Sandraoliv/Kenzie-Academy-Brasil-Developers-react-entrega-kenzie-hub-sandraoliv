@@ -4,26 +4,20 @@ import { UserContext } from "../../providers/UserContext";
 import { StyledContainer } from "./style";
 
 export function TechsList() {
-  const {
-    setTechs,
-    techs,
-    registerTech,
-    updateHandleModal,
-    setOpenUpdateModal,
-    openUpdateModal,
-  } = useContext(TechContext);
-  const { user, setUser, loginUser } = useContext(UserContext);
-  const userTechs = JSON.parse(localStorage.getItem("@TECHS"));
+  const { techs, updateHandleModal } = useContext(TechContext);
+  const { user } = useContext(UserContext);
 
   return (
     <>
       <StyledContainer>
-        {userTechs.map((tech) => (
-          <li key={tech.id} onClick={updateHandleModal}>
-            <h3>{tech.title}</h3>
-            <p> {tech.status}</p>
-          </li>
-        ))}
+        {user && techs.length > 0
+          ? techs.map((tech) => (
+              <li key={tech.id} onClick={() => updateHandleModal(tech)}>
+                <h3>{tech.title}</h3>
+                <p> {tech.status}</p>
+              </li>
+            ))
+          : null}
       </StyledContainer>
     </>
   );

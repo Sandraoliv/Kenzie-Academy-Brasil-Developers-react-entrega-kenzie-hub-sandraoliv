@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const StyledUpdateModal = styled.div`
   width: 100vw;
   height: 100vh;
@@ -27,7 +28,7 @@ export const StyledUpdateModal = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 21px;
     background-color: var(--grey-2);
   }
   h1 {
@@ -46,18 +47,19 @@ export const StyledUpdateModal = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     height: inherit;
-    background: rgba(18, 18, 20, 0.5);
+    padding: 7px 14px;
+    background-color: var(--grey-3);
   }
   label {
     width: max-content;
     align-self: flex-start;
-    background: rgba(18, 18, 20, 0.5);
+    background-color: var(--grey-3);
     color: var(--grey-0);
     font-size: 0.56rem;
     margin-left: 12px;
   }
   div {
-    background: rgba(18, 18, 20, 0.5);
+    background-color: var(--grey-3);
     height: auto;
     display: flex;
     gap: 8px;
@@ -83,6 +85,7 @@ export const StyledUpdateModal = styled.div`
     width: 95%;
     align-self: center;
     color: var(--grey-1);
+    padding: 0 8px;
     background-color: var(--grey-2);
     border-radius: 4px;
   }
@@ -109,7 +112,7 @@ export const StyledUpdateModal = styled.div`
     align-content: space-around;
     justify-content: space-around;
     flex-direction: row;
-    background: rgba(18, 18, 20, 0.5);
+    background-color: var(--grey-3);
     align-items: center;
   }
   @media (min-width: 769px) {
