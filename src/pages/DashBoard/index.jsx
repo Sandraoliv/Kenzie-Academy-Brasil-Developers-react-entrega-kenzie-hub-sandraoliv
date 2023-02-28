@@ -1,7 +1,7 @@
 import logo from "../../assets/Logo.svg";
 import { StyledMain } from "./style.js";
 import { StyledHeader } from "./style.js";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../providers/UserContext";
 import { TechContext } from "../../providers/TechContext";
@@ -12,8 +12,9 @@ import { UpdateModal } from "../../components/updateModal";
 import { Modal } from "../../components/Modal";
 
 export function DashBoard() {
-  const { setUser, user } = useContext(UserContext);
-  const { openModal, handleModal, openUpdateModal } = useContext(TechContext);
+  const { setUser, user, getUserProfile } = useContext(UserContext);
+  const { openModal, handleModal, openUpdateModal, setTechs } =
+    useContext(TechContext);
   const navigate = useNavigate();
 
   function logout() {

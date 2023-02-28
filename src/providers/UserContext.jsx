@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
-import { TechContext } from "./TechContext";
 
 export const UserContext = createContext({});
 
@@ -55,9 +54,10 @@ export function UserProvider({ children }) {
 
   async function getUserProfile() {
     try {
+      const id = localStorage.getItem("@USERID");
       setLoading(true);
 
-      const response = await api.get(`/users/${userId}`);
+      const response = await api.get(`/users/${id}`);
       setUser(response.data);
     } catch (error) {
       toast.error("Não foi possível carregar as informações!");
@@ -66,11 +66,6 @@ export function UserProvider({ children }) {
       setLoading(false);
     }
   }
-  useEffect(() => {
-    if (userId) {
-      getUserProfile();
-    }
-  }, []);
 
   useEffect(() => {
     if (token) {

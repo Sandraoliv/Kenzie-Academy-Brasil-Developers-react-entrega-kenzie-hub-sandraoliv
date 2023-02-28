@@ -52,9 +52,9 @@ export function UpdateModal() {
             <div>
               <label htmlFor="status">Status</label>
               <select id="status" {...register("status")}>
-                <option value="iniciante">Iniciante</option>
-                <option value="intermediario">Intermediário</option>
-                <option value="avancado">Avançado</option>
+                <option value="Iniciante">Iniciante</option>
+                <option value="Intermediário">Intermediário</option>
+                <option value="Avançado">Avançado</option>
               </select>
             </div>
 

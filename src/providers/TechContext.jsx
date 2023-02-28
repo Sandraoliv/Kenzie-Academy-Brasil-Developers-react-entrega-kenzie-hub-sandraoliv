@@ -14,12 +14,6 @@ export function TechProvider({ children }) {
   const token = localStorage.getItem("@TOKEN");
   const { reset } = useForm();
 
-  useEffect(() => {
-    if (user) {
-      setTechs(user.techs);
-    }
-  }, [user, openUpdateModal]);
-
   function handleModal() {
     setOpenModal(!openModal);
   }
@@ -37,10 +31,11 @@ export function TechProvider({ children }) {
         },
       });
       reset();
+      delete response.data.user;
 
-      setTechs([...techs, data]);
-
+      setTechs([...techs, response.data]);
       toast.success("Tecnologia cadastrada com sucesso!");
+      setOpenModal(false);
     } catch (error) {
       console.error(error);
       toast.error("Não foi possível cadastrar a tecnologia !");
@@ -54,9 +49,8 @@ export function TechProvider({ children }) {
           Authorization: `Bearer ${token}`,
         },
       });
-      getUserProfile();
 
-      const newTechs = techs.filter((tech) => techId !== tech.Id);
+      const newTechs = techs.filter((tech) => techId !== tech.id);
       setTechs(newTechs);
       toast.success("Tecnologia removida!");
       setOpenUpdateModal(false);
@@ -67,26 +61,24 @@ export function TechProvider({ children }) {
   }
 
   async function updateTech(data, techId) {
-    const newData = {
-      status: data.status,
-    };
-
     try {
+      const newData = {
+        status: data.status,
+      };
       const response = await api.put(`/users/techs/${techId}`, newData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      getUserProfile();
+
       const newTech = techs.map((tech) => {
         if (techId === tech.id) {
-          return { ...tech, data };
+          return { ...tech, status: data.status };
         } else {
           return tech;
         }
       });
       setTechs(newTech);
-      localStorage.setItem("@TECHS", JSON.stringify(response.data));
       toast.success("Tecnologia atualizada!");
     } catch (error) {
       console.log(error);
